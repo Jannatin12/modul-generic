@@ -6,8 +6,12 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Penjumlahan jum = new Penjumlahan();
+        SimpleDataBase<float, DateTime> simpleDB = new SimpleDataBase<float, DateTime>();
 
-        jum.JumlahTigaAngka(13, 02, 21);
+        simpleDB.AddNewData(13, DateTime.UtcNow);
+        simpleDB.AddNewData(02, DateTime.UtcNow);
+        simpleDB.AddNewData(21, DateTime.UtcNow);
+
+        simpleDB.PrintAllData();
     }
 }
